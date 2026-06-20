@@ -6,6 +6,7 @@ import type { Config, State } from "wagmi";
 import { WagmiProvider } from "wagmi";
 
 import { WalletAutoReconnect } from "@/components/WalletAutoReconnect";
+import { WalletAutoSwitchChain } from "@/components/WalletAutoSwitchChain";
 import { FarcasterAddMiniAppProvider } from "@/context/FarcasterAddMiniAppContext";
 import { wagmiConfig } from "@/config/wagmi";
 
@@ -26,6 +27,7 @@ export function Providers({ children, initialState }: ProvidersProps) {
       <QueryClientProvider client={queryClient}>
         <FarcasterAddMiniAppProvider>
           <WalletAutoReconnect />
+          <WalletAutoSwitchChain />
           {children}
         </FarcasterAddMiniAppProvider>
       </QueryClientProvider>

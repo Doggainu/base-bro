@@ -153,7 +153,7 @@ export function ConnectWallet() {
       }
       setPendingConnectorId(connector.id);
       connect(
-        { connector },
+        { connector, chainId: BRO_CHAIN.id },
         {
           onSettled: () => setPendingConnectorId(null),
         },
